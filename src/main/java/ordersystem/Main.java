@@ -7,36 +7,102 @@ import java.util.Scanner;
 /**
  * Created by insomnia on 08.09.17.
  */
-public class Main  {
-
-
+public class Main {
 
 
     public static void main(String[] args) {
 
+        /*
+        *Create Polish Cuisines and main course
+        */
+        List <GenericMainCourse<String, Integer>> polish = new ArrayList();
+
+        polish.add(new GenericMainCourse("Soup", 25));
+        polish.add(new GenericMainCourse("Milk", 15));
+        polish.add(new GenericMainCourse("Bread", 5));
+
+        /*
+        *Add dessert for polish
+        */
+        List <GenericMainCourse<String, Integer>> polishDessert = new ArrayList();
+        polishDessert.add(new GenericMainCourse("dessert1", 40));
+        polishDessert.add(new GenericMainCourse("desser2", 10));
+        polishDessert.add(new GenericMainCourse("dessert3", 20));
+
+        /**
+         * Create Italian Cuisines and main course
+         */
+        List <GenericMainCourse<String, Integer>> italian = new ArrayList();
+        italian.add(new GenericMainCourse("pizza", 50));
+        italian.add(new GenericMainCourse("coffe", 30));
+        italian.add(new GenericMainCourse("pizza", 20));
+
+        /**
+         * Add dessert for Italian
+         */
+        List <GenericMainCourse<String, Integer>> italianDessert = new ArrayList();
+        italianDessert.add(new GenericMainCourse("dessert1", 40));
+        italianDessert.add(new GenericMainCourse("desser2", 10));
+        italianDessert.add(new GenericMainCourse("dessert3", 20));
+
+        /**
+         * Create Mexican Cuisines and main course
+         */
+        List <GenericMainCourse<String, Integer>> mexican = new ArrayList();
+        mexican.add(new GenericMainCourse("tea", 50));
+        mexican.add(new GenericMainCourse("soup", 30));
+        mexican.add(new GenericMainCourse("cake", 20));
+
+        /**
+         * Add dessert for Mexican
+         */
+        List <GenericMainCourse<String, Integer>> mexicanDessert = new ArrayList();
+        mexicanDessert.add(new GenericMainCourse("dessert1", 40));
+        mexicanDessert.add(new GenericMainCourse("desser2", 10));
+        mexicanDessert.add(new GenericMainCourse("dessert3", 20));
+
+        /**
+         * Use scanner for our cuisines and desserts
+         */
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("pleace choice kitchen (polish, italian or mexican ) : ");
+        String cous = scanner.nextLine();
+
+        switch (cous){
+            case "polish" :
+                System.out.println("your choice " + polish);
+
+            case "dessert" :
+                System.out.println("Would you like order dessert? yes or no? : " );
+                cous = scanner.nextLine();
+            if (cous.equalsIgnoreCase("yes")){
+                System.out.println("your dessert " + polishDessert);
+            }
+                break;
 
 
-        List <PolishCuisines <String, Integer> > polishCuisinesList = new ArrayList<>();
+            case "italian" :
+                System.out.println("your choice " + italian);
 
-        polishCuisinesList.add(new PolishCuisines<>("Bear", 25));
-        polishCuisinesList.add(new PolishCuisines<>("MainCourse", 50));
-        polishCuisinesList.add(new PolishCuisines<>("Dessert", 15));
+            case "dessert2" :
+                System.out.println("Would you like order dessert? yes or no? : " );
+                cous = scanner.nextLine();
+                if (cous.equalsIgnoreCase("yes")) {
+                    System.out.println("your dessert " + italianDessert);
+                }
+                    break;
+            case "mexican" :
+                System.out.println("you choice " + mexican);
+
+            case "dessert3" :
+                System.out.println("Would you like order dessert? yes or no? : " );
+                cous = scanner.nextLine();
+                if (cous.equalsIgnoreCase("yes")) {
+                    System.out.println("your dessert : " + mexicanDessert);
+                }
+                    break;
+        }
 
 
-
-        List <MexicanCuisines <String, Integer> > mexicanCuisinesList = new ArrayList<>();
-
-        mexicanCuisinesList.add(new MexicanCuisines<>("Tea", 15));
-        mexicanCuisinesList.add(new MexicanCuisines<>("MainCouse", 45));
-        mexicanCuisinesList.add(new MexicanCuisines<>("Dessert", 25));
-
-        //mexicanCuisinesList.forEach(x -> System.out.println("mexican : " + mexicanCuisinesList));
-
-        Scanner in = new Scanner(System.in);
-
-        System.out.println("Please choise cuisines: Italian, Mexican or Polish: " );
-
-
-
-    }
+}
 }

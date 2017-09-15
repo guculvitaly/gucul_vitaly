@@ -1,12 +1,18 @@
 package ordersystem;
 
 /**
- * Created by insomnia on 09.09.17.
+ * Created by insomnia on 15.09.17.
  */
-public class MexicanCuisines <T, X> {
+public class GenericMainCourse<T, X> {
 
     private T name;
     private X price;
+
+
+    public GenericMainCourse(T name, X price) {
+        this.name = name;
+        this.price = price;
+    }
 
     public T getName() {
         return name;
@@ -24,18 +30,11 @@ public class MexicanCuisines <T, X> {
         this.price = price;
     }
 
-    public MexicanCuisines(T name, X price) {
-        this.name = name;
-        this.price = price;
-    }
-
     @Override
     public String toString() {
-        return "MexicanCuisines{" +
+        return "GenericMainCourse{" +
                 "name=" + name +
                 ", price=" + price +
                 '}';
     }
-
-
 }
