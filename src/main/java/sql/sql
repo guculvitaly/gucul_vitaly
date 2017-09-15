@@ -1,0 +1,17 @@
+
+
+
+
+ Solution :
+SELECT Name as Name from (
+SELECT  co.name as Name,sum(ci.population) as Population FROM XF.Country co
+join XF.City ci on co.CountryID=ci.CountryID
+group by co.name) x
+where x.Population >400;
+
+
+
+SELECT name from XF.Country
+where CountryID not in (
+SELECT c.CountryID  from XF.Building b
+join City c on c.CityID=b.CityID);
